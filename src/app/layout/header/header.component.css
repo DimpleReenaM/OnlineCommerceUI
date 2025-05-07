@@ -1,0 +1,464 @@
+/* Navbar-header */
+/* body{
+  overflow-y: hidden !important;
+} */
+.app-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #f4f4f4;
+  padding: 12px 20px;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+  display: flex !important;
+}
+
+.tempo{
+  align-items:center;
+  display: block;
+}
+.apexcart-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.apexcart-logo-container img {
+  height: 2.6rem;
+  width: auto;
+}
+
+.logo-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+  margin-top: 10px !important;
+}
+
+.navbar {
+  justify-content: center;
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.mit-online-text {
+  font-family: Arial, sans-serif;
+  font-size: 37px;
+  font-weight: bold;
+  color: #00bfff !important;
+  /* text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); */
+  display: inline;
+  text-decoration: underline;
+  cursor: pointer;
+  height: 37px;
+}
+
+.welcome{
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  /* font-weight: bold; */
+  color: #00bfff !important;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  display: inline;
+  /* text-decoration: underline; */
+}
+
+.userName{
+  color: #ff8c00;
+  text-align: center;
+  /* text-decoration: underline; */
+}
+
+.online {
+  color: #ff8c00;
+  font-style: italic;
+  text-align: center;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+.nav-item .nav-link {
+  text-decoration: none;
+  font-size: 0.9rem;
+  /* color: rgb(15,76,54) !important; */
+  transition: color 0.3s, text-decoration 0.3s;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  font-family: var(--font-navigation-family);
+  /* display: inline-flex; */
+  font-family: cursive;
+}
+
+.nav-item .nav-link:hover {
+  color: var(--primary-color);
+  text-decoration:dashed
+}
+
+/* From Uiverse.io by WhiteNervosa */ 
+.dtds {
+  font-size: 18px;
+  /* color: #e1e1e1; */
+  font-family: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+}
+
+.dtds:focus,
+.dtds:hover {
+  color: #72f10a;
+}
+
+.dtds:focus:after,
+.dtds:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+.dtds:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #72f10a;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
+
+
+.nav-item .nav-link:hover,
+.router-link-active {
+  color: var(--primary-color);
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid #1d4828;
+  border-radius: 20px;
+  padding: 5px 10px;
+  background-color: #f9f9f9;
+  transition: box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.search-bar:focus-within {
+  box-shadow: 0 0 8px rgba(29, 72, 40, 0.5);
+  border-color: #1a7245;
+}
+
+
+.search-input {
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  flex-grow: 1;
+  width: 100%;
+  background-color: transparent;
+  color: #1d4828 !important;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.improf {
+  width: 40px;
+  height: 40px;
+  /* flex-shrink: 0; */
+  border-radius: 50%;
+  margin-right: 10px; /* Adds space from the edge if needed */
+  object-fit: cover;
+}
+
+.view-cart{
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1d4828;
+  padding: 5px;
+  margin-left: 5px;
+}
+
+.search-button mat-icon {
+  font-size: 1.2rem;
+  color: #1d4828;
+}
+
+
+.header-btn-group {
+  /* display: flex; */
+  gap: 15px;
+}
+
+.header-btn-group button mat-icon {
+  font-size: 1.5rem;
+  color: #5c6c75;
+}
+
+.header-btn-group button:hover mat-icon {
+  color: var(--primary-color);
+}
+
+.header__active-menu-item .label, .list-menu__item--active .label {
+  background-position: left bottom, left bottom;
+  background-size: 100% .1rem, 100% .1rem;
+}
+
+.navbar-nav .nav-item .nav-link.router-link-active {
+  background-position: left bottom, left bottom;
+  background-size: 100% .1rem, 100% .1rem;
+}
+
+
+/* login & register btn */
+/* login & register btn */
+button {
+  /* --primary-color: #645bff; */
+  --secondary-color: #fff;
+  --hover-color: #111;
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 20px;
+  color: var(--secondary-color);
+  padding: 1em 1.8em;
+  background: var(--primary-color);
+  display: flex;
+  transition: all 0.3s ease;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+  position: relative;
+}
+
+button .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button .arrow {
+  margin-top: 1px;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+button .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+button:hover {
+  background-color: transparent;
+}
+
+button:hover .arrow {
+  background: var(--secondary-color);
+}
+
+button:hover .arrow:before {
+  right: 0;
+}
+
+/* Sink effect on button */
+button:active {
+  transform: translateY(4px); /* Moves the button down to simulate sinking */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds shadow to show depression */
+}
+
+button:focus {
+  outline: none;
+}
+
+button.btn-primary {
+  background-color: #007bff;
+  color: white;
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+
+button.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Stylish Login Button */
+.login-btn {
+  /* background: linear-gradient(135deg, rgb(0,191,255), rgb(255,140,0) ); */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+  letter-spacing: 1px;
+}
+
+.login-btn:hover {
+  background: linear-gradient(135deg, #0056b3, #003b80);
+  box-shadow: 0 6px 15px rgba(0, 91, 187, 0.5);
+  transform: translateY(-2px);
+}
+
+.login-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
+}
+
+.login-btn .arrow {
+  width: 10px;
+  height: 2px;
+  background: white;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.login-btn .arrow::before {
+  content: "";
+  position: absolute;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  padding: 3px;
+  top: -3px;
+  right: -2px;
+  transform: rotate(-45deg);
+  transition: all 0.3s ease-in-out;
+}
+
+.login-btn:hover .arrow {
+  width: 16px;
+}
+
+.login-btn:hover .arrow::before {
+  right: -4px;
+}
+
+.add-product-btn {
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  /* background: linear-gradient(135deg, #007bff, #ff8c00); */
+  color: white;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 1px;
+}
+
+.add-product-btn:hover {
+  background: linear-gradient(135deg, #0056b3, #003b80);
+  box-shadow: 0 6px 15px rgba(0, 91, 187, 0.5);
+  transform: translateY(-2px);
+}
+
+.add-product-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
+}
+
+/* Cart Icon */
+.cart-icon {
+  position: relative;
+}
+
+.cart-icon img {
+  font-size: 24px;
+  color: #fff;
+  transition: color 0.3s ease-in-out;
+}
+
+.cart-icon a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Badge */
+.cart-badge {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: #ff8400;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cart-icon i {
+      font-size: 20px;
+  }
+
+  .cart-badge {
+      width: 16px;
+      height: 16px;
+      font-size: 10px;
+      top: -4px;
+      right: -8px;
+  }
+}

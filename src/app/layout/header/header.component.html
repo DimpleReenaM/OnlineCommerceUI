@@ -1,0 +1,141 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+<!-- Navbar-header -->
+
+<section class="app-header">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <!-- Logo -->
+            <div class="col-2">
+                <div class="app-icon d-flex align-items-center">
+                    <div class="apexcart-logo-container">
+                        <img src="https://i.ibb.co/LP9Jrqq/cart-image.png" alt="ApexCart Logo"
+                            style="border-radius: 15px;" />
+                        <h4 class="mit-online-text" (click)="navigateToHome()">Mit<span
+                                class="online">Online</span></h4>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="col-md-5 flex-grow-1 text-center">
+                <div class="search-bar">
+                    <input type="search" class="search-input" placeholder="Search for Products Brands and more..."
+                        aria-label="Search" id="searchInput" />
+                    <button type="button" class="search-button">
+                        <mat-icon>search</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <!-- <div class="col-md-1"></div> -->
+            <div class="col-md-1 d-flex gap-1" *ngIf="!isLoggedIn">
+                <button class="login-btn" routerLink="/login">
+                    Login
+                    <div class="arrow-wrapper">
+                        <div class="arrow"></div>
+                    </div>
+                </button>
+                <!-- <button routerLink="/register">
+                    Sign up
+                    <div class="arrow-wrapper">
+                        <div class="arrow"></div>
+                    </div>
+                </button> -->
+            </div>
+            <div class="col-md-2 d-flex justify-content-center" *ngIf="isAdmin">
+                <button routerLink="/addproducts" class="btn btn-primary add-product-btn">
+                    <i class="fas fa-plus"></i>Add Product
+                </button>
+            </div>
+            <div class="col-md-3 text-end d-flex justify-content-around" *ngIf="isLoggedIn">
+                <h3 matTooltipPosition="above" *ngIf="currentUser" class="pt-2 welcome">
+                    Hello, 
+                    <span matTooltipPosition="above" class="userName"  [matTooltip]="getFullName()" >{{truncateName(currentUser?.userName) }}</span>
+                </h3>
+                <!-- <a aria-label="Add cart menu " routerLink="/cart" style="cursor: pointer;">
+                                <img src="../../../assets/add-to-cart.png" class="view-cart" alt="add Cart" >
+                            </a> -->
+
+                <div class="nav-item cart-icon">
+                    <a routerLink="/cart" class="nav-link">
+                        <img src="../../../assets/add-to-cart.png" class="view-cart" alt="add Cart" (click)="cartcount()">
+                        <span class="cart-badge" *ngIf="cartItemCount > 0">{{ cartItemCount }}</span>
+                    </a>
+                </div>
+
+
+                <a [matMenuTriggerFor]="profileMenu" aria-label="User Profile Menu" class="hide-on-mobile">
+                    <img class="improf" src="../../../assets/user.png" alt="Profile Icon" style="cursor: pointer;" />
+                </a>
+                <mat-menu #profileMenu="matMenu" class="mt-3">
+                    <a mat-menu-item [routerLink]="['/user-profile/',UserId]">
+                        <mat-icon style="color: #ff8c00;">person</mat-icon>
+                        <span class="my_profile">My Profile</span>
+                    </a>
+                    <a mat-menu-item (click)="logout()" routerLink="/login">
+                        <mat-icon style="color: #ff8c00;">logout</mat-icon>
+                        <span class="my_profile">Logout</span>
+                    </a>
+                </mat-menu>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Navbar -->
+<!-- <div class="col-auto">
+                <nav class="navbar">
+                    <ul class="navbar-nav d-flex flex-row justify-content-between align-items-center w-100">
+                        <div class="d-flex flex-row">
+                            <li class="nav-item mx-3">
+                                <a class="nav-link dtds" routerLink="/" routerLinkActive="router-link-active"
+                                    [routerLinkActiveOptions]="{exact: true}">HOME</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link dtds" routerLink="/products"
+                                    routerLinkActive="router-link-active">PRODUCTS</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link dtds" routerLink="/about"
+                                    routerLinkActive="router-link-active">ABOUT</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link dtds" routerLink="/help"
+                                    routerLinkActive="router-link-active">HELP</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link dtds" routerLink="/login"
+                                    routerLinkActive="router-link-active">login</a>
+                            </li>
+                        </div>
+                    </ul>
+                </nav>
+            </div> -->
+<!-- Profile Icon (Aligned to Right) -->
+
+<!-- Search Bar -->
+
+<!-- Header Buttons -->
+<!-- <div class="col-auto header-btn-group">
+                <button mat-icon-button routerLink="/wishlist">
+                    <mat-icon>favorite</mat-icon>
+                </button>
+                <button mat-icon-button routerLink="/cart">
+                    <mat-icon>shopping_bag</mat-icon>
+                </button>
+                <ng-container *ngIf="!auth.UserLoggedIn(); else userLoggedIn">
+                    <button mat-icon-button routerLink="/login">
+                        <mat-icon>login</mat-icon>
+                    </button>
+                </ng-container>
+                <ng-template #userLoggedIn>
+                    <button [matMenuTriggerFor]="loginMenu" mat-icon-button>
+                        <mat-icon>account_circle</mat-icon>
+                    </button>
+                    <mat-menu #loginMenu="matMenu">
+                        <button mat-button>
+                            <mat-icon>logout</mat-icon>
+                            Logout
+                        </button>
+                    </mat-menu>
+                </ng-template>
+            </div> -->

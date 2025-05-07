@@ -1,0 +1,91 @@
+<div *ngIf="product" class="product-container container w-75 mt-5">
+    <div class="image-section">
+        <img [src]="product.thumbnail?.url|renderimg" alt="Product Image" class="main-image">
+        <!-- <div class="thumbnail-container">
+            <img src="image.png" alt="Thumbnail 1" class="thumbnail">
+            <img src="image.png" alt="Thumbnail 2" class="thumbnail">
+            <img src="image.png" alt="Thumbnail 3" class="thumbnail">
+            <img src="image.png" alt="Thumbnail 4" class="thumbnail">
+        </div> -->
+    </div>
+    <div class="details-section">
+        <p class="category">{{product.category.name}}</p>
+        <h1 class="product-title">{{product.name}}</h1>
+        <div class="reviews">
+            <span class="stars">★★★★★</span> <span class="reviews-count">({{product.totalReviews}} reviews)</span>
+        </div>
+        <div class="price-section">
+            <span class="current-price">{{product.newPrice|currency:'INR'}}</span>
+            <span class="old-price">{{product.originalPrice|currency:'INR'}}</span>
+            <span class="discount">{{product.discountPercentage}}% Off</span>
+        </div>
+        <!-- <div class="weight-options">
+            <button class="weight-btn">250g</button>
+            <button class="weight-btn">500g</button>
+            <button class="weight-btn">1kg</button>
+        </div> -->
+        <div class="quantity-section">
+            <button class="quantity-btn" (click)="updateQuantity(quantity-1)">-</button>
+            <input type="number" [(ngModel)]="quantity" min="1" max="10" class="quantity-input">
+            <button class="quantity-btn" (click)="updateQuantity(quantity+1)">+</button>
+        </div>
+        <div class="actions">
+            <button mat-raised-button class="app-btn-primary" (click)="addToCart(product.id)">Add To Cart</button>
+            <button mat-raised-button class="wishlist-btn">
+                <mat-icon class="m-0">favorite</mat-icon>
+            </button>
+        </div>
+        <div class="product-info">
+            <p>Product Code: <span class="info-value">FBB00255</span></p>
+            <p>Availability: 
+                <span class="info-value" *ngIf="product.inStock">In Stock</span>
+                <span class="info-value" *ngIf="!product.inStock">Out Of Stock</span>
+            </p>
+            <p>Brand: <span class="info-value">{{product.brand.name}}</span></p>
+            <p>Shipping: <span class="info-value">01 day shipping. (Free pickup today)</span></p>
+        </div>
+    </div>
+</div>
+
+<section class="container mt-3">
+<mat-card class="product-card">
+    <!-- Discount Badge -->
+    <div class="badge-container" >
+      <span class="badge sale-badge" *ngIf="product.isFeatured">Featured</span>
+      <span class="badge mx-2" *ngIf="product.isOnDiscount">{{ product.discountPercentage }}%</span>
+    </div>
+  
+    <!-- Product Image -->
+    <!-- <img mat-card-image [src]="imageUrl+product.thumbnail?.url" alt="{{ product.name }}"> -->
+    <img class="img-fluid" mat-card-image [src]="product.thumbnail?.url|renderimg" alt="{{ product.name }}">
+
+    <!-- Action Buttons (View, Wishlist, Compare) -->
+    <div class="action-icons">
+      <button mat-icon-button matTooltip="View Details" [routerLink]="['product',product.id]"><mat-icon>visibility</mat-icon></button>
+      <button mat-icon-button matTooltip="Add To WishList" (click)="addToWishList(product.id)"><mat-icon>favorite</mat-icon></button>
+      <!-- <button mat-icon-button><mat-icon>compare_arrows</mat-icon></button> -->
+    </div>
+  
+    <!-- Product Details -->
+    <mat-card-content class="product-card-content pt-2">
+      <div class="category">{{ product.category.name }}</div>
+      <h2 class="product-name">{{ product.name }}</h2>
+      <div class="rating">
+        <s-rating [rating]="4"></s-rating>
+        <span class="rating-value">{{ product.averageRating }} ({{ product.totalReviews }})</span>
+      </div>
+    </mat-card-content>
+  
+    <!-- Price and Action Button -->
+    <mat-card-actions class="product-card-action">
+      <div class="price">
+        <span class="current-price">{{ product.newPrice|currency:'INR' }}</span>
+        <span class="old-price" *ngIf="product.originalPrice">{{ product.originalPrice|currency:'INR' }}</span>
+      </div>
+    </mat-card-actions>
+    <div class="d-flex">
+      <button mat-raised-button matTooltip="Add To Cart" class="app-btn-primary" (click)="addToCart(product.id)">+ Add to Cart</button>
+      <button mat-raised-button matTooltip="Buy Now" class="app-btn-buy-now ms-3" routerLink="/checkout"> BUY NOW</button>
+    </div>
+  </mat-card>
+</section>

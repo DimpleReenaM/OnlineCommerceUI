@@ -1,0 +1,218 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 89vh;
+    background: url('/src/assets/Picture_a_lively_scene_V1.mp4') 
+                no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Background Video */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit:cover
+   
+    /* background: url('https://videos.pexels.com/video-files/4124024/4124024-uhd_2732_1440_25fps.mp4') 
+    no-repeat center center; */
+}
+
+/* Centered Form Container */
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 79%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    background: white;
+    /* backdrop-filter: blur(5px) !important; */
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    /* opacity: 1; */
+
+}
+
+
+@media (max-width: 768px) {
+    #bg-video {
+        display: none;
+    }
+
+    /* body {
+        background: url('https://www.shutterstock.com/shutterstock/photos/2456075197/display_1500/stock-photo-woman-shops-for-men-s-blazer-on-smartphone-modern-ecommerce-app-interface-concept-for-effortless-2456075197.jpg') no-repeat center center;
+        background-size: cover;
+    } */
+}
+
+
+/* Title and Subtitles */
+.welcome-title {
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.welcome-subtitle {
+    font-size: 1rem;
+    color: #999494;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.signup-link {
+    color: #ff0055;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+}
+
+/* Form Styling */
+mat-form-field {
+    width: 100%;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+/* Login Button */
+.login-button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to right, #ff0055, #ff7a00);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.login-button:hover {
+    background: #ff3d00;
+}
+
+/* Google Sign-in Button */
+.social-button.google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.social-button.google:hover {
+    background-color: #f8f8f8;
+    border-color: #bbb;
+    transform: translateY(1px); /* Moves the button up */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Adds shadow to make it look lifted */
+}
+
+.google-logo {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.google-logo svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Video Controls */
+.video-controls {
+    position: absolute;
+    top: 85%;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.video-controls button {
+    background: rgb(204 16 16 / 70%);
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 16%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.video-controls button:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* Full Page Loader */
+.full-page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999; /* Make sure it stays on top */
+  }
+  
+  /* Loader Animation */
+  .loader {
+    border: 8px solid rgba(255, 255, 255, 0.3);
+    border-top: 8px solid white;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Loading Text */
+  .loading-text {
+    color: white;
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  

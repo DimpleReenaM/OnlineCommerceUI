@@ -1,0 +1,123 @@
+.tabs-container {
+    text-align: center;
+  }
+  
+  .tabs {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+  
+  .tabs li {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    font-weight: bold;
+  }
+  
+  .tabs li.active {
+    border: 1.5px solid #e3a70e; /* Highlight active tab */
+    color: #e3a70e;
+  }
+  
+  .tab-content {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #e3a70e;
+    border-radius: 5px;
+  }
+  
+
+  .address-card {
+    border: 2px solid transparent;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.3s;
+    cursor: pointer;
+    background-color: white;
+    /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); */
+  }
+  
+  .address-card:hover {
+    border-color: #e3a70e;
+  }
+  
+  .selected {
+    border: solid 2px;
+    border-color:  #e3a70e;
+    background-color: white;
+  }
+
+  .form-check-input{
+    width: 20px;
+    height: 20px;
+  }
+  
+  .form-check-input:checked {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background-color: #e3a70e;
+    border-color: #e3a70e;
+  }
+  
+
+  /* .container {
+    max-width: 600px;
+  } */
+  
+  .card {
+    /* border-radius: 12px; */
+    background: #ffffff;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  input.form-control {
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+
+  .card-header{
+    border: 1px solid #e3a70e;
+    background-color:rgb(255, 255, 255);
+  }
+
+  .card-body{
+    border-left: 1px solid #e3a70e;
+    border-right: 1px solid #e3a70e;
+    border-bottom: 1px solid #e3a70e;
+  }
+  
+  .img-thumbnail{
+    width: 150px;
+    height: 150px;
+
+  }  
+  
+  .nav-link.active {
+    color: #ffd700;
+  } 
+  .nav-link{
+    color: black;
+    cursor: pointer;
+  }
+  .backG{
+    background: url('https://i.pinimg.com/736x/33/50/06/335006e3065dc7ac4905e7ca2e56fc21.jpg') no-repeat center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 130vh!important;
+  }
+  
